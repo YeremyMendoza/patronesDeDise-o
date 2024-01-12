@@ -65,5 +65,15 @@ function Client(){
         console.log(silla.obtenerProducto());
     }
 }
+//SALIDA
+/**
+ * FABRICA MODERNA
+ * Mesa moderna
+ * silla moderna
+ * FABRICA CLASICA
+ * Mesa Clasica
+ * Silla Clasica
+ */
+
 
 new Client().main();

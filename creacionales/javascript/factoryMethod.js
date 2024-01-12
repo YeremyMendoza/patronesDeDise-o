@@ -45,22 +45,29 @@ function Client(){
     this.main = () => {
         console.log("Primer Creador");
         let creador1 = new CreadorConcreto1();
-        // Object.freeze(creador1);
+        // Object.freeze(creador1); esto puede ser necesario
         this.codeClient(creador1);
-
-        console.log("Segundo Creador");
-        let creador2 = new CreadorConcreto2();
-        // Object.freeze(creador2);
-        this.codeClient(creador2);
     }
+
     this.codeClient = (creador) => {
-        //Resultado Esperado
         let producto = creador.metodoInterno();
         console.log(producto);
-        //Esto produce un resultado no esperado
+        //RESULTADO ESPERADO
+        /**
+         * Primer Creador
+         * El proucto es: producto1
+         */
+
+        // Esto produce un resultado no esperado
         creador.metodoInterno = () => "resultado no esperado";
         producto = creador.metodoInterno();
         console.log(producto);
+        //RESULTADO
+        /**
+         * Primer Creador
+         * El proucto es: producto1
+         * resultado no esperado
+         */
     }
 }
 
